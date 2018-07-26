@@ -14,7 +14,7 @@
         'sentinel_pkg'      : salt['grains.filter_by']({
             'Ubuntu-14.04': 'redis-server',
             'Ubuntu-16.04': 'redis-sentinel',
-            'Ubuntu-18.04': 'redis-sentinel'
+            'Ubuntu-18.04': 'redis-sentinel',
             'default': 'redis-server'
         }, grain='osfinger'),
         'sentinel_service'  : 'redis-sentinel',
