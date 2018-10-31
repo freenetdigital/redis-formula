@@ -5,6 +5,11 @@ Debian-7:
 Ubuntu-16.04:
   cfg_version: '3.0'
   sentinel_pkg: redis-sentinel
+Ubuntu-18.04:
+  cfg_version: '4.0'
+  sentinel_pkg: redis-sentinel
+  sentinel:
+    pidfile: /var/run/sentinel/redis-sentinel.pid
 CentOS Linux-7:
   cfg_version: '3.2'
   sentinel:
