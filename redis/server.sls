@@ -104,7 +104,7 @@ redis-initd:
 redis_disable_transparent_huge_pages:
     cmd.run:
         - name: echo "never" > /sys/kernel/mm/transparent_hugepage/enabled
-  {%- if salt["test.provider"]("service") == "systemd" %}
+  {%- if grains['init'] == "systemd" %}
         - unless: ls /etc/systemd/system/redis-server.service.d/disable-transparent-hugepage.conf
     file.managed:
         - name: /etc/systemd/system/redis-server.service.d/disable-transparent-hugepage.conf
